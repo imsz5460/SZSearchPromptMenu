@@ -15,6 +15,10 @@
 		FA18BD721FD51F6C00E4E234 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BD711FD51F6C00E4E234 /* main.m */; };
 		FA18BD7C1FD51F6C00E4E234 /* SZSearchPromptMenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BD7B1FD51F6C00E4E234 /* SZSearchPromptMenuTests.m */; };
 		FA18BD871FD51F6C00E4E234 /* SZSearchPromptMenuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BD861FD51F6C00E4E234 /* SZSearchPromptMenuUITests.m */; };
+		FA18BDA61FD5228200E4E234 /* MoreFunctionFrame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FA18BD9F1FD5228200E4E234 /* MoreFunctionFrame@2x.png */; };
+		FA18BDA71FD5228200E4E234 /* SZSearchPromptMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BDA11FD5228200E4E234 /* SZSearchPromptMenu.m */; };
+		FA18BDA81FD5228200E4E234 /* SZSearchPromptMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BDA31FD5228200E4E234 /* SZSearchPromptMenuItem.m */; };
+		FA18BDA91FD5228200E4E234 /* SZSearchPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BDA51FD5228200E4E234 /* SZSearchPromptCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,13 @@
 		FA18BD821FD51F6C00E4E234 /* SZSearchPromptMenuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SZSearchPromptMenuUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA18BD861FD51F6C00E4E234 /* SZSearchPromptMenuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZSearchPromptMenuUITests.m; sourceTree = "<group>"; };
 		FA18BD881FD51F6C00E4E234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA18BD9F1FD5228200E4E234 /* MoreFunctionFrame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MoreFunctionFrame@2x.png"; sourceTree = "<group>"; };
+		FA18BDA01FD5228200E4E234 /* SZSearchPromptMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZSearchPromptMenu.h; sourceTree = "<group>"; };
+		FA18BDA11FD5228200E4E234 /* SZSearchPromptMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZSearchPromptMenu.m; sourceTree = "<group>"; };
+		FA18BDA21FD5228200E4E234 /* SZSearchPromptMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZSearchPromptMenuItem.h; sourceTree = "<group>"; };
+		FA18BDA31FD5228200E4E234 /* SZSearchPromptMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZSearchPromptMenuItem.m; sourceTree = "<group>"; };
+		FA18BDA41FD5228200E4E234 /* SZSearchPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZSearchPromptCell.h; sourceTree = "<group>"; };
+		FA18BDA51FD5228200E4E234 /* SZSearchPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZSearchPromptCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +112,7 @@
 		FA18BD611FD51F6B00E4E234 /* SZSearchPromptMenu */ = {
 			isa = PBXGroup;
 			children = (
+				FA18BD9E1FD5228200E4E234 /* SZSearchPromptMenu */,
 				FA18BD621FD51F6B00E4E234 /* AppDelegate.h */,
 				FA18BD631FD51F6B00E4E234 /* AppDelegate.m */,
 				FA18BD651FD51F6C00E4E234 /* ViewController.h */,
@@ -130,6 +142,20 @@
 				FA18BD881FD51F6C00E4E234 /* Info.plist */,
 			);
 			path = SZSearchPromptMenuUITests;
+			sourceTree = "<group>";
+		};
+		FA18BD9E1FD5228200E4E234 /* SZSearchPromptMenu */ = {
+			isa = PBXGroup;
+			children = (
+				FA18BD9F1FD5228200E4E234 /* MoreFunctionFrame@2x.png */,
+				FA18BDA01FD5228200E4E234 /* SZSearchPromptMenu.h */,
+				FA18BDA11FD5228200E4E234 /* SZSearchPromptMenu.m */,
+				FA18BDA21FD5228200E4E234 /* SZSearchPromptMenuItem.h */,
+				FA18BDA31FD5228200E4E234 /* SZSearchPromptMenuItem.m */,
+				FA18BDA41FD5228200E4E234 /* SZSearchPromptCell.h */,
+				FA18BDA51FD5228200E4E234 /* SZSearchPromptCell.m */,
+			);
+			path = SZSearchPromptMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA18BD6F1FD51F6C00E4E234 /* LaunchScreen.storyboard in Resources */,
+				FA18BDA61FD5228200E4E234 /* MoreFunctionFrame@2x.png in Resources */,
 				FA18BD6C1FD51F6C00E4E234 /* Assets.xcassets in Resources */,
 				FA18BD6A1FD51F6C00E4E234 /* Main.storyboard in Resources */,
 			);
@@ -266,7 +293,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA18BD671FD51F6C00E4E234 /* ViewController.m in Sources */,
+				FA18BDA81FD5228200E4E234 /* SZSearchPromptMenuItem.m in Sources */,
+				FA18BDA71FD5228200E4E234 /* SZSearchPromptMenu.m in Sources */,
 				FA18BD721FD51F6C00E4E234 /* main.m in Sources */,
+				FA18BDA91FD5228200E4E234 /* SZSearchPromptCell.m in Sources */,
 				FA18BD641FD51F6B00E4E234 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

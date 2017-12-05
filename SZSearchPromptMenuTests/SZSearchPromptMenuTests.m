@@ -2,7 +2,7 @@
 //  SZSearchPromptMenuTests.m
 //  SZSearchPromptMenuTests
 //
-//  Created by Yjt on 2017/12/4.
+//  Created by ShiZhi on 2017/12/4.
 //  Copyright © 2017年 shizhi. All rights reserved.
 //
 
