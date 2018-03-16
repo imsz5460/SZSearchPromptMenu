@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "SZSearchPromptMenuItem.h"
 
 typedef void(^PopMenuDidSlectedCompledBlock)(NSInteger index, SZSearchPromptMenuItem *menuItem);

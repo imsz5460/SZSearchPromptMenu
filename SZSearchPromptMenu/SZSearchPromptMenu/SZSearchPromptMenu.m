@@ -45,11 +45,6 @@
     self.targetPoint = point;
 
     [self showMenu];
-    //按钮集合，用于触摸事件过滤
-    self.touchView = [NSMutableArray array];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self findSubView:self.superview];
-    });
 }
 
 - (void) showClearButton {
@@ -97,6 +92,8 @@
         } completion:^(BOOL finished) {
             
         }];
+
+        
     } else {
         [self dissMissPopMenuAnimatedOnMenuSelected:NO];
     }
@@ -115,15 +112,12 @@
     }];
 }
 
-
 #pragma mark - Propertys
-
 - (UIImageView *)menuContainerView {
     if (!_menuContainerView) {
         _menuContainerView = [[UIImageView alloc] initWithImage:[[UIImage imageNamed:@"MoreFunctionFrame"] resizableImageWithCapInsets:UIEdgeInsetsMake(30, 10, 30, 50) resizingMode:UIImageResizingModeTile]];
         _menuContainerView.userInteractionEnabled = YES;
         
-
         [_menuContainerView addSubview:self.menuTableView];
        
     }
@@ -157,8 +151,8 @@
         _clearHistoryButton = clearBtn;
     }
     return _clearHistoryButton;
-    
 }
+
 -(NSMutableArray <SZSearchPromptMenuItem *>*)arrOfSearchBoxItems {
     if (!_arrOfSearchBoxItems) {
         _arrOfSearchBoxItems = [NSMutableArray array];
@@ -200,7 +194,6 @@
     
 }
 
-
 #pragma mark - Life Cycle
 
 - (void)setup {
@@ -210,7 +203,7 @@
     [self addSubview:self.menuContainerView];
 }
 
-- (id)initWithMenus:(NSArray *)menus {
+- (instancetype)initWithMenus:(NSArray *)menus {
     self = [super init];
     if (self) {
         self.menus = [[NSMutableArray alloc] initWithArray: menus];
@@ -239,16 +232,6 @@
     return self;
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    CGPoint localPoint = [touch locationInView:self];
-    
-    if (CGRectContainsPoint(self.menuTableView.frame, localPoint)) {
-        [self hitTest:localPoint withEvent:event];
-    } else {
-        [self dissMissPopMenuAnimatedOnMenuSelected: NO];
-    }
-}
 
 - (void) layoutSubviews {
     [super layoutSubviews];
@@ -266,40 +249,49 @@
         
     }
     
-   
     [_menuContainerView addSubview:self.clearHistoryButton];
     
 }
 
-#pragma mark - 遍历查找子控件
--(void)findSubView:(UIView*)view
-{
-    for (UIView* subView in view.subviews)
-    {
-        if ([view isKindOfClass: [UIButton class]]) {
-            
-            [self.touchView addObject: view];
+
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+   
+
+//    在子视图范围内依旧返回子视图
+    NSArray<UIView *> * superViews = self.currentSuperView.subviews;
+    // 倒序 从最上面的一个视图开始查找
+    for (NSUInteger i = superViews.count; i > 0; i--) {
+        
+        UIView * subview = superViews[i - 1];
+        
+        // 转换坐标系 使坐标基于子视图
+        CGPoint newPoint = [self convertPoint:point toView:subview];
+        // 得到子视图 hitTest 方法返回的值
+        if ([subview class] == [SZSearchPromptMenu class]) {
+            CGPoint redCenterInBlueView = [self convertPoint:point toView:self.menuContainerView];
+            BOOL isInside = [self.menuContainerView pointInside:redCenterInBlueView withEvent:nil];
+            NSLog(@"----%@=======%@",NSStringFromCGRect(self.menuTableView.frame),NSStringFromCGPoint(point));
+//            if (CGRectContainsPoint(self.menuTableView.frame, point)) {
+             if (isInside) {
+                 return [super hitTest:point withEvent:event];
+            } else
+            continue;
         }
-        [self findSubView:subView];
+        
+        UIView * fitView = [subview hitTest:newPoint withEvent:event];
+        // 如果子视图返回一个view 就直接返回 不在继续遍历
+        if (fitView) {
+            return fitView;
+        }
     }
+    
+     [self dissMissPopMenuAnimatedOnMenuSelected:NO];
+    
+    return nil;
 }
 
-#pragma mark - 拦截响应事件
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-    
-    if (self.touchView.count) {
-        
-        for (UIView*view in self.touchView) {
-            CGPoint btnP = [self convertPoint:point toView:view];
-            
-            // 判断下点在不在按钮上
-            if ([view pointInside:btnP withEvent:event]) {
-                return view;
-            }
-    }
-    }
-     return [super hitTest:point withEvent:event];
-}
+
 
 #pragma mark - UITableView DataSource
 

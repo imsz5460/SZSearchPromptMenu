@@ -10,12 +10,15 @@
 /**
  *  本demo预期效果：
  *  输入任意字符后，点击查询，即保存到了历史记录。下次输入时输入框下方列表会有该历史记录，点击该条目自动填充输入。
- *  多个记录条目按时间由远及近排列，且去除重复条目。
+ *  多个记录条目按时间由近及远排列，且去除重复条目。
  *  即时搜索匹配，关键字高亮。
  *  一键清除历史记录。
  *  说明：SZSearchPromptMenu是在XHPopMenu的基础上进行了较大的修改及扩展，XHPopMenu的功能为pop菜单。感谢作者曾宪华(@xhzengAIB)。实际上SZSearchPromptMenu保留了弹出菜单的功能。
  *
  */
+
+//将menu作为textfield属性
+
 
 #import "ViewController.h"
 #import "SZSearchPromptMenu.h"
@@ -30,17 +33,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-  
     _textField.delegate = self;
-   
-
 }
 
 #pragma mark -- 初始化列表框
 -(SZSearchPromptMenu *)popView{
     
-    if (!_popView) {
-        
+    if (!_popView) {        
         //添加+ items
         NSMutableArray *listArr = [NSMutableArray array];
         if (self.historyList.count == 0) {
@@ -89,8 +88,6 @@
 }
 
 - (IBAction)query:(id)sender {
-  
-    
 
 //  按时间由近及远排序，且对历史记录列表去重。
     
