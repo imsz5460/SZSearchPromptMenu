@@ -25,7 +25,7 @@ typedef void(^PopMenuDidClearedCompledBlock)(void);
 
 @property (nonatomic, copy) PopMenuDidSlectedCompledBlock popMenuDidDismissCompled;
 
-@property (nonatomic, copy) PopMenuDidClearedCompledBlock popMenuDidClearedHistroyCompled;
+@property (nonatomic, copy) PopMenuDidClearedCompledBlock popMenuDidClearedHistroyCompled;//清除本地历史记录
 
 
 - (void)dissMissPopMenuAnimatedOnMenuSelected:(BOOL)selected;

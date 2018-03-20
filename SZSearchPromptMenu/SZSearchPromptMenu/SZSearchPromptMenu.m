@@ -31,6 +31,7 @@
 @property (nonatomic, strong) UIButton *clearHistoryButton;//清除列表记录button；
 @property (nonatomic, assign) BOOL isShowClearHistoryButton;
 
+
 @end
 
 @implementation SZSearchPromptMenu
@@ -183,6 +184,7 @@
 -(void) didClickClearButton {
     //点击标记
     didClearedHistroy = YES;
+    _arrOfSearchBoxes = nil;
 //    清除数组
     [self.menus removeAllObjects];
     [self.menuTableView reloadData];
@@ -242,53 +244,52 @@
         _menuContainerView.frame = CGRectMake(self.targetPoint.x, self.targetPoint.y, kXHMenuTableViewWidth, self.menus.count >5? 6 * (kXHMenuItemViewHeight + kXHSeparatorLineImageViewHeight) + kXHMenuTableViewSapcing : (self.menus.count+1) * (kXHMenuItemViewHeight + kXHSeparatorLineImageViewHeight) + kXHMenuTableViewSapcing);
         _menuTableView.frame = CGRectMake(0, kXHMenuTableViewSapcing, CGRectGetWidth(_menuContainerView.bounds), (CGRectGetHeight(_menuContainerView.bounds) - kXHMenuTableViewSapcing -  kXHMenuItemViewHeight));
         [_menuContainerView addSubview:self.clearHistoryButton];
+        
+        
     } else {
         
         _menuContainerView.frame = CGRectMake(self.targetPoint.x, self.targetPoint.y, kXHMenuTableViewWidth, self.menus.count >5? 5 * (kXHMenuItemViewHeight + kXHSeparatorLineImageViewHeight) + kXHMenuTableViewSapcing : (self.menus.count) * (kXHMenuItemViewHeight + kXHSeparatorLineImageViewHeight) + kXHMenuTableViewSapcing);
         _menuTableView.frame = CGRectMake(0, kXHMenuTableViewSapcing, CGRectGetWidth(_menuContainerView.bounds), (CGRectGetHeight(_menuContainerView.bounds) - kXHMenuTableViewSapcing ));
         
+        
     }
     
-    [_menuContainerView addSubview:self.clearHistoryButton];
-    
+   
 }
 
 
-
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
-   
 
 //    在子视图范围内依旧返回子视图
     NSArray<UIView *> * superViews = self.currentSuperView.subviews;
     // 倒序 从最上面的一个视图开始查找
     for (NSUInteger i = superViews.count; i > 0; i--) {
-        
         UIView * subview = superViews[i - 1];
-        
         // 转换坐标系 使坐标基于子视图
         CGPoint newPoint = [self convertPoint:point toView:subview];
+        
         // 得到子视图 hitTest 方法返回的值
-        if ([subview class] == [SZSearchPromptMenu class]) {
+        if ([subview class] == [SZSearchPromptMenu class] ) {
             CGPoint redCenterInBlueView = [self convertPoint:point toView:self.menuContainerView];
             BOOL isInside = [self.menuContainerView pointInside:redCenterInBlueView withEvent:nil];
-            NSLog(@"----%@=======%@",NSStringFromCGRect(self.menuTableView.frame),NSStringFromCGPoint(point));
-//            if (CGRectContainsPoint(self.menuTableView.frame, point)) {
-             if (isInside) {
+            if (isInside) {
                  return [super hitTest:point withEvent:event];
             } else
             continue;
         }
         
         UIView * fitView = [subview hitTest:newPoint withEvent:event];
-        // 如果子视图返回一个view 就直接返回 不在继续遍历
+        // 如果子视图返回一个view 就直接返回 不再继续遍历
         if (fitView) {
+            if (fitView == subview) {
+                 [self dissMissPopMenuAnimatedOnMenuSelected:NO];
+            }
             return fitView;
         }
     }
-    
      [self dissMissPopMenuAnimatedOnMenuSelected:NO];
     
-    return nil;
+    return self;
 }
 
 
@@ -314,7 +315,7 @@
     return self.menus.count;
 }
 
-NSString *textLabeltext;
+static NSString *textLabeltext;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifer = @"cellIdentifer";
 

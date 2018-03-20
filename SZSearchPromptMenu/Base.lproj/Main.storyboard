@@ -20,7 +20,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gw-l5-yHf">
                                 <rect key="frame" x="0.0" y="50" width="375" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="在这里输入" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Au6-2Z-PIY" customClass="BRTextField">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="在这里输入" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Au6-2Z-PIY" customClass="SZSearchTextfield">
                                         <rect key="frame" x="20" y="10" width="235" height="30"/>
                                         <color key="tintColor" red="0.40784313729999999" green="0.68235294120000001" blue="0.1647058824" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -64,7 +64,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="BKm-Cm-mil"/>
                     <connections>
-                        <outlet property="textField" destination="Au6-2Z-PIY" id="tu6-o4-Tq2"/>
+                        <outlet property="textField" destination="Au6-2Z-PIY" id="4wm-Tc-G1B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

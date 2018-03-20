@@ -19,6 +19,7 @@
 		FA18BDA71FD5228200E4E234 /* SZSearchPromptMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BDA11FD5228200E4E234 /* SZSearchPromptMenu.m */; };
 		FA18BDA81FD5228200E4E234 /* SZSearchPromptMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BDA31FD5228200E4E234 /* SZSearchPromptMenuItem.m */; };
 		FA18BDA91FD5228200E4E234 /* SZSearchPromptCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA18BDA51FD5228200E4E234 /* SZSearchPromptCell.m */; };
+		FA408404205FB173008B8509 /* SZSearchTextfield.m in Sources */ = {isa = PBXBuildFile; fileRef = FA408403205FB173008B8509 /* SZSearchTextfield.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		FA18BDA31FD5228200E4E234 /* SZSearchPromptMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZSearchPromptMenuItem.m; sourceTree = "<group>"; };
 		FA18BDA41FD5228200E4E234 /* SZSearchPromptCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SZSearchPromptCell.h; sourceTree = "<group>"; };
 		FA18BDA51FD5228200E4E234 /* SZSearchPromptCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SZSearchPromptCell.m; sourceTree = "<group>"; };
+		FA408402205FB173008B8509 /* SZSearchTextfield.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SZSearchTextfield.h; sourceTree = "<group>"; };
+		FA408403205FB173008B8509 /* SZSearchTextfield.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SZSearchTextfield.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 				FA18BDA31FD5228200E4E234 /* SZSearchPromptMenuItem.m */,
 				FA18BDA41FD5228200E4E234 /* SZSearchPromptCell.h */,
 				FA18BDA51FD5228200E4E234 /* SZSearchPromptCell.m */,
+				FA408402205FB173008B8509 /* SZSearchTextfield.h */,
+				FA408403205FB173008B8509 /* SZSearchTextfield.m */,
 			);
 			path = SZSearchPromptMenu;
 			sourceTree = "<group>";
@@ -296,6 +301,7 @@
 				FA18BDA81FD5228200E4E234 /* SZSearchPromptMenuItem.m in Sources */,
 				FA18BDA71FD5228200E4E234 /* SZSearchPromptMenu.m in Sources */,
 				FA18BD721FD51F6C00E4E234 /* main.m in Sources */,
+				FA408404205FB173008B8509 /* SZSearchTextfield.m in Sources */,
 				FA18BDA91FD5228200E4E234 /* SZSearchPromptCell.m in Sources */,
 				FA18BD641FD51F6B00E4E234 /* AppDelegate.m in Sources */,
 			);
