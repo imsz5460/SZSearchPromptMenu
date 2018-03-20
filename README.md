@@ -26,7 +26,7 @@
 
   
 ## 如何使用【How To Use】
-输入框使用SZSerchTextfield即自带关键字搜索提示框。具体方法详见下载的demo。
+输入框使用SZSearchTextfield即自带关键字搜索提示框。具体方法详见下载的demo。
 
 【Please reference to Demo.】
 
