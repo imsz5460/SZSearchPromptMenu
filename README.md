@@ -1,5 +1,5 @@
 
-## 实现效果【effect】
+## 实现效果【Effect】
 
 去年写的一个框架，今次做了些许优化和简单封装。功能效果是这样的：
 
@@ -31,7 +31,7 @@
 【Please reference to Demo.】
 
 
-## 声明【statement】
+## 声明【Statement】
 SZSearchPromptMenu是在XHPopMenu的基础上进行了较大的修改及扩展，XHPopMenu的功能仅为pop菜单。感谢作者曾宪华(@xhzengAIB)。实际上SZSearchPromptMenu保留了XHPopMenu弹出菜单的功能。
 
 【SZSearchPromptMenu has been modified and expanded on the basis of XHPopMenu, XHPopMenu function for the pop menu.Thank the authors 曾宪华 (@ xhzengAIB)
