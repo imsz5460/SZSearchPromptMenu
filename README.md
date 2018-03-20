@@ -5,6 +5,7 @@
 
 ![demo.gif](https://upload-images.jianshu.io/upload_images/4320229-a703e15454eaeae3.gif?imageMogr2/auto-orient/strip)
 
+![demo2.jpg](https://upload-images.jianshu.io/upload_images/4320229-a1f6916d4ec07ad2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 基本功能【Features】
 
