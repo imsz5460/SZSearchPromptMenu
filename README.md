@@ -7,7 +7,7 @@
 
 ![demo2.jpg](https://upload-images.jianshu.io/upload_images/4320229-a1f6916d4ec07ad2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-## 基本功能【Features】
+## 基本功能【function】
 
 
 结合本demo进行说明：
@@ -19,8 +19,9 @@
  *  弹出菜单
  
 【 
-   *  Enter an arbitrary string to click the query, and the string will be saved to the history record.Next time the input box could show the history list, click a certain item could automatic input.
-   *  Multiple entries sorting from near to far , and remove duplicate entries.
+   *  Enter an arbitrary string to click the query, and the string will be saved to the history record.Next time the input box would show the history list, click on a certain item will automatically enter.
+   *  Multiple entries are sorted from near to far, and duplicate entries are removed.
+   *  Click the blank area outside the drop-down list to pick up the list, and if you click on a non blank area (such as a button), then response the event in the region.
    *  Instant search matching, highlighted keywords (optional).
    *  Onestep to clear history record (optional). 
    *  pop-up menu.】
@@ -35,6 +36,6 @@
 ## 声明【Statement】
 SZSearchPromptMenu是在XHPopMenu的基础上进行了较大的修改及扩展，XHPopMenu的功能仅为pop菜单。感谢作者曾宪华(@xhzengAIB)。实际上SZSearchPromptMenu保留了XHPopMenu弹出菜单的功能。
 
-【SZSearchPromptMenu has been modified and expanded on the basis of XHPopMenu, XHPopMenu function for the pop menu.Thank the authors 曾宪华 (@ xhzengAIB)
+【SZSearchPromptMenu has been modified and expanded on the basis of XHPopMenu, XHPopMenu function for the pop menu.Thank the author 曾宪华 (@ xhzengAIB)
   In fact SZSearchPromptMenu kept the function of the pop-up menu.】
 
